@@ -1,0 +1,5 @@
+com\example\filmservice\FilmServiceApplication.class
+com\example\filmservice\repository\FilmRepository.class
+com\example\filmservice\dto\ReserveRequest.class
+com\example\filmservice\model\Film.class
+com\example\filmservice\controller\FilmController.class

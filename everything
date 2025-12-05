@@ -1,0 +1,1249 @@
+# Online Cinema Reservation System - Complete Project Details
+
+## Project Structure (Tree View)
+
+```
+cinema-reservation/
+├── pom.xml
+├── README.md
+├── TODO.md
+├── film-service/
+│   ├── pom.xml
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── example/
+│   │   │   │           └── filmservice/
+│   │   │   │               ├── FilmServiceApplication.java
+│   │   │   │               ├── controller/
+│   │   │   │               │   └── FilmController.java
+│   │   │   │               ├── dto/
+│   │   │   │               │   └── ReserveRequest.java
+│   │   │   │               ├── model/
+│   │   │   │               │   └── Film.java
+│   │   │   │               └── repository/
+│   │   │   │                   └── FilmRepository.java
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   └── test/
+│   │       └── java/
+│   └── target/
+│       ├── classes/
+│       │   ├── application.properties
+│       │   └── com/
+│       │       └── example/
+│       │           └── filmservice/
+│       │               ├── FilmServiceApplication.class
+│       │               ├── controller/
+│       │               │   └── FilmController.class
+│       │               ├── dto/
+│       │               │   └── ReserveRequest.class
+│       │               ├── model/
+│       │               │   └── Film.class
+│       │               └── repository/
+│       │                   └── FilmRepository.class
+│       ├── film-service-0.0.1-SNAPSHOT.jar
+│       ├── generated-sources/
+│       │   └── annotations/
+│       ├── maven-archiver/
+│       │   └── pom.properties
+│       ├── maven-status/
+│       │   └── maven-compiler-plugin/
+│       │       └── compile/
+│       │           └── default-compile/
+│       │               ├── createdFiles.lst
+│       │               └── inputFiles.lst
+│       └── test-classes/
+├── payment-service/
+│   ├── pom.xml
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── example/
+│   │   │   │           └── paymentservice/
+│   │   │   │               ├── PaymentServiceApplication.java
+│   │   │   │               ├── controller/
+│   │   │   │               │   ├── PaymentApiController.java
+│   │   │   │               │   └── PaymentController.java
+│   │   │   │               ├── model/
+│   │   │   │               │   └── Payment.java
+│   │   │   │               ├── repository/
+│   │   │   │               │   └── PaymentRepository.java
+│   │   │   │               └── service/
+│   │   │   │                   └── PaymentService.java
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   └── test/
+│   │       └── java/
+│   └── target/
+│       ├── classes/
+│       │   ├── application.properties
+│       │   └── com/
+│       │       └── example/
+│       │           └── paymentservice/
+│       │               ├── PaymentServiceApplication.class
+│       │               ├── controller/
+│       │               │   ├── PaymentApiController.class
+│       │               │   └── PaymentController.class
+│       │               ├── model/
+│       │               │   └── Payment.class
+│       │               ├── repository/
+│       │               │   └── PaymentRepository.class
+│       │               └── service/
+│       │                   └── PaymentService.class
+│       ├── payment-service-0.0.1-SNAPSHOT.jar
+│       ├── generated-sources/
+│       │   └── annotations/
+│       ├── maven-archiver/
+│       │   └── pom.properties
+│       ├── maven-status/
+│       │   └── maven-compiler-plugin/
+│       │       └── compile/
+│       │           └── default-compile/
+│       │               ├── createdFiles.lst
+│       │               └── inputFiles.lst
+│       └── test-classes/
+└── reservation-service/
+    ├── pom.xml
+    ├── src/
+    │   ├── main/
+    │   │   ├── java/
+    │   │   │   └── com/
+    │   │   │       └── example/
+    │   │   │           └── reservationservice/
+    │   │   │               ├── ReservationServiceApplication.java
+    │   │   │               ├── client/
+    │   │   │               │   └── FilmServiceClient.java
+    │   │   │               ├── controller/
+    │   │   │               │   └── ReservationController.java
+    │   │   │               ├── dto/
+    │   │   │               │   └── ReserveRequest.java
+    │   │   │               ├── model/
+    │   │   │               │   └── Reservation.java
+    │   │   │               ├── repository/
+    │   │   │               │   └── ReservationRepository.java
+    │   │   │               └── service/
+    │   │   │                   └── ReservationService.java
+    │   │   └── resources/
+    │   │       └── application.properties
+    │   └── test/
+    │       └── java/
+    └── target/
+        ├── classes/
+        │   ├── application.properties
+        │   └── com/
+        │       └── example/
+        │           └── reservationservice/
+        │               ├── ReservationServiceApplication.class
+        │               ├── client/
+        │               │   └── FilmServiceClient.class
+        │               ├── controller/
+        │               │   └── ReservationController.class
+        │               ├── dto/
+        │               │   └── ReserveRequest.class
+        │               ├── model/
+        │               │   └── Reservation.class
+        │               ├── repository/
+        │               │   └── ReservationRepository.class
+        │               └── service/
+        │                   └── ReservationService.class
+        ├── generated-sources/
+        │   └── annotations/
+        ├── maven-archiver/
+        │   └── pom.properties
+        ├── maven-status/
+        │   └── maven-compiler-plugin/
+        │       └── compile/
+        │           └── default-compile/
+        │               ├── createdFiles.lst
+        │               └── inputFiles.lst
+        ├── reservation-service-0.0.1-SNAPSHOT.jar
+        ├── reservation-service-0.0.1-SNAPSHOT.jar.original
+        └── test-classes/
+```
+
+## Parent pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.15</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>cinema-reservation</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>cinema-reservation</name>
+    <description>Online Cinema Reservation System</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <modules>
+        <module>film-service</module>
+        <module>reservation-service</module>
+        <module>payment-service</module>
+    </modules>
+</project>
+```
+
+## film-service/pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>cinema-reservation</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>film-service</artifactId>
+    <name>film-service</name>
+    <description>Film Service for Cinema Reservation</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+## film-service/src/main/resources/application.properties
+
+```properties
+server.port=8181
+spring.datasource.url=jdbc:h2:mem:filmdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=create-drop
+```
+
+## film-service/src/main/java/com/example/filmservice/FilmServiceApplication.java
+
+```java
+package com.example.filmservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FilmServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(FilmServiceApplication.class, args);
+    }
+
+}
+```
+
+## film-service/src/main/java/com/example/filmservice/model/Film.java
+
+```java
+package com.example.filmservice.model;
+
+import jakarta.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Film {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String description;
+    private int duration; // in minutes
+    private int availableSeats;
+
+    // Constructors
+    public Film() {
+    }
+
+    public Film(String title, String description, int duration, int availableSeats) {
+        this.title = title;
+        this.description = description;
+        this.duration = duration;
+        this.availableSeats = availableSeats;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+}
+```
+
+## film-service/src/main/java/com/example/filmservice/repository/FilmRepository.java
+
+```java
+package com.example.filmservice.repository;
+
+import com.example.filmservice.model.Film;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource
+public interface FilmRepository extends JpaRepository<Film, Long> {
+}
+```
+
+## film-service/src/main/java/com/example/filmservice/dto/ReserveRequest.java
+
+```java
+package com.example.filmservice.dto;
+
+public class ReserveRequest {
+
+    private Long filmId;
+    private int numberOfSeats;
+
+    // Constructors
+    public ReserveRequest() {
+    }
+
+    public ReserveRequest(Long filmId, int numberOfSeats) {
+        this.filmId = filmId;
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    // Getters and Setters
+    public Long getFilmId() {
+        return filmId;
+    }
+
+    public void setFilmId(Long filmId) {
+        this.filmId = filmId;
+    }
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+}
+```
+
+## film-service/src/main/java/com/example/filmservice/controller/FilmController.java
+
+```java
+package com.example.filmservice.controller;
+
+import com.example.filmservice.dto.ReserveRequest;
+import com.example.filmservice.model.Film;
+import com.example.filmservice.repository.FilmRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/films")
+public class FilmController {
+
+    @Autowired
+    private FilmRepository filmRepository;
+
+    @PostMapping("/reserve")
+    public ResponseEntity<String> reserveSeats(@RequestBody ReserveRequest request) {
+        Film film = filmRepository.findById(request.getFilmId()).orElse(null);
+        if (film == null) {
+            return ResponseEntity.notFound().build();
+        }
+        if (film.getAvailableSeats() < request.getNumberOfSeats()) {
+            return ResponseEntity.badRequest().body("Not enough seats available");
+        }
+        film.setAvailableSeats(film.getAvailableSeats() - request.getNumberOfSeats());
+        filmRepository.save(film);
+        return ResponseEntity.ok("Seats reserved successfully");
+    }
+}
+```
+
+## reservation-service/pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>cinema-reservation</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>reservation-service</artifactId>
+    <name>reservation-service</name>
+    <description>Reservation Service for Cinema Reservation</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2023.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+## reservation-service/src/main/resources/application.properties
+
+```properties
+server.port=8182
+spring.datasource.url=jdbc:h2:mem:reservationdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=create-drop
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/ReservationServiceApplication.java
+
+```java
+package com.example.reservationservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+@SpringBootApplication
+@EnableFeignClients
+public class ReservationServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ReservationServiceApplication.class, args);
+    }
+
+}
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/model/Reservation.java
+
+```java
+package com.example.reservationservice.model;
+
+import jakarta.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Reservation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long filmId;
+    private Long userId;
+    private int numberOfSeats;
+    private String status; // e.g., "PENDING", "CONFIRMED", "CANCELLED"
+
+    // Constructors
+    public Reservation() {}
+
+    public Reservation(Long filmId, Long userId, int numberOfSeats, String status) {
+        this.filmId = filmId;
+        this.userId = userId;
+        this.numberOfSeats = numberOfSeats;
+        this.status = status;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getFilmId() {
+        return filmId;
+    }
+
+    public void setFilmId(Long filmId) {
+        this.filmId = filmId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+}
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/repository/ReservationRepository.java
+
+```java
+package com.example.reservationservice.repository;
+
+import com.example.reservationservice.model.Reservation;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ReservationRepository extends JpaRepository<Reservation, Long> {
+}
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/dto/ReserveRequest.java
+
+```java
+package com.example.reservationservice.dto;
+
+public class ReserveRequest {
+
+    private Long filmId;
+    private int numberOfSeats;
+
+    // Constructors
+    public ReserveRequest() {}
+
+    public ReserveRequest(Long filmId, int numberOfSeats) {
+        this.filmId = filmId;
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    // Getters and Setters
+    public Long getFilmId() {
+        return filmId;
+    }
+
+    public void setFilmId(Long filmId) {
+        this.filmId = filmId;
+    }
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+}
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/client/FilmServiceClient.java
+
+```java
+package com.example.reservationservice.client;
+
+import com.example.reservationservice.dto.ReserveRequest;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+@FeignClient(name = "film-service", url = "http://localhost:8181")
+public interface FilmServiceClient {
+
+    @PostMapping("/films/reserve")
+    ResponseEntity<String> reserveSeats(@RequestBody ReserveRequest request);
+}
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/service/ReservationService.java
+
+```java
+package com.example.reservationservice.service;
+
+import com.example.reservationservice.client.FilmServiceClient;
+import com.example.reservationservice.dto.ReserveRequest;
+import com.example.reservationservice.model.Reservation;
+import com.example.reservationservice.repository.ReservationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReservationService {
+
+    @Autowired
+    private ReservationRepository reservationRepository;
+
+    @Autowired
+    private FilmServiceClient filmServiceClient;
+
+    public Reservation createReservation(Long filmId, Long userId, int numberOfSeats) {
+        // Check availability and reserve seats via film-service
+        ReserveRequest request = new ReserveRequest(filmId, numberOfSeats);
+        ResponseEntity<String> response = filmServiceClient.reserveSeats(request);
+        if (!response.getStatusCode().is2xxSuccessful()) {
+            throw new RuntimeException("Failed to reserve seats: " + response.getBody());
+        }
+
+        // Create reservation
+        Reservation reservation = new Reservation(filmId, userId, numberOfSeats, "CONFIRMED");
+        return reservationRepository.save(reservation);
+    }
+}
+```
+
+## reservation-service/src/main/java/com/example/reservationservice/controller/ReservationController.java
+
+```java
+package com.example.reservationservice.controller;
+
+import com.example.reservationservice.model.Reservation;
+import com.example.reservationservice.service.ReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/reservations")
+public class ReservationController {
+
+    @Autowired
+    private ReservationService reservationService;
+
+    @PostMapping
+    public ResponseEntity<Reservation> createReservation(@RequestParam Long filmId, @RequestParam Long userId, @RequestParam int numberOfSeats) {
+        try {
+            Reservation reservation = reservationService.createReservation(filmId, userId, numberOfSeats);
+            return ResponseEntity.ok(reservation);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+}
+```
+
+## payment-service/pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>cinema-reservation</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>payment-service</artifactId>
+    <name>payment-service</name>
+    <description>Payment Service for Cinema Reservation</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+## payment-service/src/main/resources/application.properties
+
+```properties
+server.port=8183
+spring.datasource.url=jdbc:h2:mem:paymentdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=create-drop
+```
+
+## payment-service/src/main/java/com/example/paymentservice/PaymentServiceApplication.java
+
+```java
+package com.example.paymentservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PaymentServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentServiceApplication.class, args);
+    }
+
+}
+```
+
+## payment-service/src/main/java/com/example/paymentservice/model/Payment.java
+
+```java
+package com.example.paymentservice.model;
+
+import jakarta.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Payment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long reservationId;
+    private double amount;
+    private String status; // e.g., "PENDING", "COMPLETED", "FAILED"
+
+    // Constructors
+    public Payment() {}
+
+    public Payment(Long reservationId, double amount, String status) {
+        this.reservationId = reservationId;
+        this.amount = amount;
+        this.status = status;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getReservationId() {
+        return reservationId;
+    }
+
+    public void setReservationId(Long reservationId) {
+        this.reservationId = reservationId;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+}
+```
+
+## payment-service/src/main/java/com/example/paymentservice/repository/PaymentRepository.java
+
+```java
+package com.example.paymentservice.repository;
+
+import com.example.paymentservice.model.Payment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
+}
+```
+
+## payment-service/src/main/java/com/example/paymentservice/controller/PaymentApiController.java
+
+```java
+package com.example.paymentservice.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/payment")
+public class PaymentApiController {
+
+    @PostMapping("/process")
+    public ResponseEntity<Map<String, String>> processPayment(@RequestBody Map<String, Object> paymentRequest) {
+        // Simulated payment processing - always succeeds
+        Map<String, String> response = Map.of("status", "SUCCESS", "transactionId", "TXN" + System.currentTimeMillis());
+        return ResponseEntity.ok(response);
+    }
+}
+```
+
+## payment-service/src/main/java/com/example/paymentservice/service/PaymentService.java
+
+```java
+package com.example.paymentservice.service;
+
+import com.example.paymentservice.model.Payment;
+import com.example.paymentservice.repository.PaymentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
+
+import java.util.Map;
+
+@Service
+public class PaymentService {
+
+    @Autowired
+    private PaymentRepository paymentRepository;
+
+    private final WebClient webClient = WebClient.create("http://localhost:8183");
+
+    public Mono<Payment> processPayment(Long reservationId, double amount) {
+        // Call simulated payment API
+        return webClient.post()
+                .uri("/api/payment/process")
+                .bodyValue(Map.of("reservationId", reservationId, "amount", amount))
+                .retrieve()
+                .bodyToMono(Map.class)
+                .map(response -> {
+                    String status = (String) response.get("status");
+                    if ("SUCCESS".equals(status)) {
+                        Payment payment = new Payment(reservationId, amount, "COMPLETED");
+                        return paymentRepository.save(payment);
+                    } else {
+                        Payment payment = new Payment(reservationId, amount, "FAILED");
+                        return paymentRepository.save(payment);
+                    }
+                });
+    }
+}
+```
+
+## payment-service/src/main/java/com/example/paymentservice/controller/PaymentController.java
+
+```java
+package com.example.paymentservice.controller;
+
+import com.example.paymentservice.model.Payment;
+import com.example.paymentservice.service.PaymentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
+
+@RestController
+@RequestMapping("/payments")
+public class PaymentController {
+
+    @Autowired
+    private PaymentService paymentService;
+
+    @PostMapping
+    public Mono<ResponseEntity<Payment>> processPayment(@RequestParam Long reservationId, @RequestParam double amount) {
+        return paymentService.processPayment(reservationId, amount)
+                .map(payment -> ResponseEntity.ok(payment))
+                .onErrorReturn(ResponseEntity.badRequest().build());
+    }
+}
+```
+
+## README.md
+
+# Online Cinema Reservation System
+
+This is a microservices-based online cinema reservation system built with Spring Boot. It consists of three services: film-service, reservation-service, and payment-service.
+
+## Architecture
+
+- **film-service** (Port 8181): Manages films and seat reservations using Spring Data REST.
+- **reservation-service** (Port 8182): Handles reservations, communicates with film-service via FeignClient.
+- **payment-service** (Port 8183): Processes payments using WebClient to a simulated payment API.
+
+## Prerequisites
+
+- Java 17
+- Maven 3.6+
+- Internet connection for Maven dependencies
+
+## Setup and Running
+
+1. Clone or navigate to the project directory.
+2. Build the project: `mvn clean install`
+3. Start each service in separate terminals:
+   - Film Service: `java -jar film-service/target/film-service-0.0.1-SNAPSHOT.jar`
+   - Reservation Service: `java -jar reservation-service/target/reservation-service-0.0.1-SNAPSHOT.jar`
+   - Payment Service: `java -jar payment-service/target/payment-service-0.0.1-SNAPSHOT.jar`
+
+## API Documentation (Swagger)
+
+Once services are running, access Swagger UI for each service:
+
+- Film Service: http://localhost:8181/swagger-ui/
+- Reservation Service: http://localhost:8182/swagger-ui/
+- Payment Service: http://localhost:8183/swagger-ui/
+
+## Testing the System
+
+### 1. Add a Film (Film Service)
+
+**Endpoint:** POST http://localhost:8181/films
+
+**Request Body:**
+
+```json
+{
+  "title": "Inception",
+  "description": "A mind-bending sci-fi thriller",
+  "duration": 148,
+  "availableSeats": 100
+}
+```
+
+**Curl Command:**
+
+```bash
+curl -X POST http://localhost:8181/films \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Inception","description":"A mind-bending sci-fi thriller","duration":148,"availableSeats":100}'
+```
+
+**Expected Response:** Film object with ID (e.g., ID: 1)
+
+### 2. Get All Films (Film Service)
+
+**Endpoint:** GET http://localhost:8181/films
+
+**Curl Command:**
+
+```bash
+curl -X GET http://localhost:8181/films
+```
+
+**Expected Response:** List of films
+
+### 3. Get Film by ID (Film Service)
+
+**Endpoint:** GET http://localhost:8181/films/{id}
+
+**Curl Command:**
+
+```bash
+curl -X GET http://localhost:8181/films/1
+```
+
+**Expected Response:** Film object with ID 1
+
+### 4. Reserve Seats (Film Service)
+
+**Endpoint:** POST http://localhost:8181/films/reserve
+
+**Request Body:**
+
+```json
+{
+  "filmId": 1,
+  "numberOfSeats": 2
+}
+```
+
+**Curl Command:**
+
+```bash
+curl -X POST http://localhost:8181/films/reserve \
+  -H "Content-Type: application/json" \
+  -d '{"filmId":1,"numberOfSeats":2}'
+```
+
+**Expected Response:** "Seats reserved successfully"
+
+### 5. Create Reservation (Reservation Service)
+
+**Endpoint:** POST http://localhost:8182/reservations?filmId=1&userId=1&numberOfSeats=2
+
+**Curl Command:**
+
+```bash
+curl -X POST "http://localhost:8182/reservations?filmId=1&userId=1&numberOfSeats=2"
+```
+
+**Expected Response:** Reservation object with status "CONFIRMED"
+
+### 6. Get All Reservations (Reservation Service)
+
+**Endpoint:** GET http://localhost:8182/reservations
+
+**Curl Command:**
+
+```bash
+curl -X GET http://localhost:8182/reservations
+```
+
+**Expected Response:** List of reservations
+
+### 7. Process Payment (Payment Service)
+
+**Endpoint:** POST http://localhost:8183/payments?reservationId=1&amount=20.0
+
+**Curl Command:**
+
+```bash
+curl -X POST "http://localhost:8183/payments?reservationId=1&amount=20.0"
+```
+
+**Expected Response:** Payment object with status "COMPLETED"
+
+### 8. Get All Payments (Payment Service)
+
+**Endpoint:** GET http://localhost:8183/payments
+
+**Curl Command:**
+
+```bash
+curl -X GET http://localhost:8183/payments
+```
+
+**Expected Response:** List of payments
+
+## H2 Database Console
+
+Access H2 console for each service:
+
+- Film Service: http://localhost:8181/h2-console (JDBC URL: jdbc:h2:mem:filmdb)
+- Reservation Service: http://localhost:8182/h2-console (JDBC URL: jdbc:h2:mem:reservationdb)
+- Payment Service: http://localhost:8183/h2-console (JDBC URL: jdbc:h2:mem:paymentdb)
+
+Username: sa, Password: password
+
+## Error Scenarios
+
+### Insufficient Seats
+
+Try to reserve more seats than available:
+
+```bash
+curl -X POST http://localhost:8181/films/reserve \
+  -H "Content-Type: application/json" \
+  -d '{"filmId":1,"numberOfSeats":200}'
+```
+
+Expected: 400 Bad Request - "Not enough seats available"
+
+### Non-existent Film
+
+Try to reserve for a non-existent film:
+
+```bash
+curl -X POST http://localhost:8181/films/reserve \
+  -H "Content-Type: application/json" \
+  -d '{"filmId":999,"numberOfSeats":1}'
+```
+
+Expected: 404 Not Found
+
+## Full Workflow Test
+
+1. Add a film (Step 1)
+2. Reserve seats (Step 4)
+3. Create reservation (Step 5) - This will check availability and reserve seats
+4. Process payment (Step 7)
+
+This demonstrates the complete reservation flow with inter-service communication.
+
+## TODO.md
+
+(This file was empty in the project)
+
+## Summary of What Was Done
+
+1. **Created Parent Maven Project Structure:**
+   - Parent pom.xml with Spring Boot 2.7.15 and three modules: film-service, reservation-service, payment-service.
+
+2. **Implemented film-service Module:**
+   - pom.xml with dependencies for Spring Data JPA, Spring Data REST, H2, Swagger.
+   - application.properties with port 8181 and H2 config.
+   - FilmServiceApplication.java main class.
+   - Film.java entity with id, title, description, duration, availableSeats.
+   - FilmRepository.java with @RepositoryRestResource for REST endpoints.
+   - ReserveRequest.java DTO for reservation requests.
+   - FilmController.java with custom POST /films/reserve endpoint for seat reservation.
+
+3. **Implemented reservation-service Module:**
+   - pom.xml with dependencies for Spring Web, OpenFeign, Spring Data JPA, H2, Swagger.
+   - application.properties with port 8182 and H2 config.
+   - ReservationServiceApplication.java main class with @EnableFeignClients.
+   - Reservation.java entity with id, filmId, userId, numberOfSeats, status.
+   - ReservationRepository.java JpaRepository.
+   - ReserveRequest.java DTO.
+   - FilmServiceClient.java FeignClient interface to call film-service.
+   - ReservationService.java business
