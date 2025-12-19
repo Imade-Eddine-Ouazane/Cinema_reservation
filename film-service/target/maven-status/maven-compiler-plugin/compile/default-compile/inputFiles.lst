@@ -1,5 +1,6 @@
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\film-service\src\main\java\com\example\filmservice\dto\ReserveRequest.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\film-service\src\main\java\com\example\filmservice\FilmServiceApplication.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\film-service\src\main\java\com\example\filmservice\repository\FilmRepository.java
+C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\film-service\src\main\java\com\example\filmservice\config\CorsConfig.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\film-service\src\main\java\com\example\filmservice\model\Film.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\film-service\src\main\java\com\example\filmservice\controller\FilmController.java

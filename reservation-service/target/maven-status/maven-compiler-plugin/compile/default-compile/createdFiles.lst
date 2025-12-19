@@ -3,5 +3,7 @@ com\example\reservationservice\repository\ReservationRepository.class
 com\example\reservationservice\ReservationServiceApplication.class
 com\example\reservationservice\service\ReservationService.class
 com\example\reservationservice\model\Reservation.class
+com\example\reservationservice\config\CorsConfig.class
+com\example\reservationservice\config\CorsConfig$1.class
 com\example\reservationservice\controller\ReservationController.class
 com\example\reservationservice\dto\ReserveRequest.class

@@ -4,4 +4,5 @@ C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\payment-service\src\main\java\c
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\payment-service\src\main\java\com\example\paymentservice\model\Payment.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\payment-service\src\main\java\com\example\paymentservice\controller\PaymentApiController.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\payment-service\src\main\java\com\example\paymentservice\FeignClient.java
+C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\payment-service\src\main\java\com\example\paymentservice\config\CorsConfig.java
 C:\Users\imade\OneDrive\Bureau\Projet Mehdi Imad\payment-service\src\main\java\com\example\paymentservice\PaymentServiceApplication.java
