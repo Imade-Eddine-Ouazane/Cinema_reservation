@@ -197,3 +197,8 @@ Expected: 404 Not Found
 4. Process payment (Step 7)
 
 This demonstrates the complete reservation flow with inter-service communication.
+
+
+
+
+j'ai ajouter le demo et le raport dans un fichier docs
